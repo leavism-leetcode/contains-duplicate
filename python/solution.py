@@ -25,7 +25,27 @@ class Solution(object):
         :type nums: List[int]
         :rtype: bool
         """
-        
+        seen = set()
+        for number in nums:
+            if number in seen:
+                return True
+            seen.add(number)
+        return False
     
 # Instantiate the Solution class
-# solution = Solution()
+solution = Solution()
+
+# Test data
+test_data1 = [1, 2, 3, 1]
+test_data2 = [1, 2, 3, 4]
+test_data3 = [1, 1, 1, 3, 3, 4, 3, 2, 4, 2]
+
+# Call the containsDuplicate method with the test data
+result1 = solution.containsDuplicate(test_data1)
+result2 = solution.containsDuplicate(test_data2)
+result3 = solution.containsDuplicate(test_data3)
+
+# Print the results
+print(f"Test data 1: {test_data1}, Output: {result1}")
+print(f"Test data 2: {test_data2}, Output: {result2}")
+print(f"Test data 3: {test_data3}, Output: {result3}")
